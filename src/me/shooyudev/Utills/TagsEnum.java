@@ -1,0 +1,7 @@
+package me.shooyudev.Utills;
+
+public enum TagsEnum {
+	
+	NORMAL, VIP, MVP , PRO , DESIGNER , YOUTUBER , BUILDER , BUILDERPLUS , YOUTUBERPLUS , HELPER , TRIAL , MOD , MODPLUS , GERENTE , ADMIN , ADMINPLUS , DONO , DIRETOR
+
+}

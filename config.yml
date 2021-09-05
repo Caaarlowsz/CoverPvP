@@ -1,0 +1,27 @@
+#########################################################
+#                 (=[ CoverNetwork ]=)                  #
+#          Inicializaçao: 15/09/2017                    #
+#            Terminio: (Intermediario)                  #
+#                                                       #
+#          Credits: Shooyu               #
+#                                                       #
+#########################################################
+
+
+## - Config's Motd - ##
+Motd: '&c&lArkuz&f&lMC » &7Servidor de KitPvP'
+Motd2: '&eVENHA VER NOSSAS ATUALIZAÇOES DE &bNATAL*7! !'
+
+
+## - Config's Mensagems - ##
+Mensagem1: '&7Compre seu vip e tenha varias vantagens no servidor.'
+Mensagem2: '&7Divulgue o servidor para seus amigos.'
+Mensagem3: '&7Quer ser youtuber? Grave no servidor e manda o link do video para um superior.'
+Mensagem4: '&7Achou um Hack : Use: /report <nick> <motivo>.'
+Mensagem5: '&7Ajude-nos a manter o servidor sempre online, comprando seu vip em: loja-arkuzmc.buycraft.net'
+
+## - Config's Aplicar - ##
+Builder: '&e&lConstrução.'
+Helper: '&e&lConstrução.'
+Trial: '&e&lhttps://goo.gl/forms/1whzbwUBlhradlDn2'
+GcDetector: '&e&lhttps://goo.gl/forms/1whzbwUBlhradlDn2'
