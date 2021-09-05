@@ -12,10 +12,10 @@ import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.WarpsAPI;
 import me.shooyudev.Comandos.Evento;
 
-public class Respawn implements Listener{
-	
+public class Respawn implements Listener {
+
 	@EventHandler
-	public void respawn(PlayerRespawnEvent e){
+	public void respawn(PlayerRespawnEvent e) {
 		Player p = e.getPlayer();
 		p.getInventory().clear();
 		API.itensSpawn(p);
@@ -25,12 +25,12 @@ public class Respawn implements Listener{
 		p.teleport(p.getWorld().getSpawnLocation());
 		p.getInventory().setArmorContents(null);
 		Evento.participantes.remove(p.getName());
-		
+
 		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
 			public void run() {
 				p.spigot().respawn();
 			}
-		  }, 1L);
+		}, 1L);
 	}
 
 }

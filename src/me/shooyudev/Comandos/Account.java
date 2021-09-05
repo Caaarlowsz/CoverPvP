@@ -10,13 +10,13 @@ import me.shooyudev.API.StatsManager;
 import me.shooyudev.Manager.Manager;
 import me.shooyudev.Utills.Strings;
 
-public class Account extends Manager{
-	
+public class Account extends Manager {
+
 	@Override
 	public void Comando(CommandSender sender, Command command, String[] argumentos) {
-		Player p = (Player)sender;
-		
-		if(command.getName().equalsIgnoreCase("account") || command.getName().equalsIgnoreCase("acc")) {
+		Player p = (Player) sender;
+
+		if (command.getName().equalsIgnoreCase("account") || command.getName().equalsIgnoreCase("acc")) {
 			if (argumentos.length == 0) {
 				p.sendMessage(" ");
 				p.sendMessage(ChatColor.GRAY + "UUID da sua conta: " + ChatColor.YELLOW + p.getUniqueId());
@@ -45,7 +45,7 @@ public class Account extends Manager{
 				p.sendMessage(" ");
 			}
 		}
-		
+
 	}
 
 }

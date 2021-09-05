@@ -112,24 +112,26 @@ import me.shooyudev.menus.Menus;
 import me.shooyudev.scoreboarding.Updater;
 
 public class Main extends JavaPlugin {
-	
+
 	public static ArrayList<String> login = new ArrayList<>();
-	
+
 	public static FpsEnum estado;
 	public static Scroller sc;
 	public static Updater up = new Updater();
 	public static BlinkEffect bk = new BlinkEffect();
-	
+
 	public static Main instance;
+
 	public static Main getInstance() {
 		return instance;
 	}
+
 	public static Plugin plugin;
+
 	public static Plugin getPlugin() {
 		return plugin;
 	}
-	
-	@SuppressWarnings("deprecation")
+
 	@Override
 	public void onEnable() {
 		instance = this;
@@ -144,30 +146,31 @@ public class Main extends JavaPlugin {
 		PvP.pvp = true;
 		Dano.Dano = true;
 		for (Player player : Bukkit.getOnlinePlayers()) {
-			player.kickPlayer(ChatColor.DARK_RED + "" + ChatColor.BOLD + "REINCIANDO" + "\n" + "\n" + ChatColor.GRAY + "            Estamos reiniciando para melhorar sua jogabilidade" + "\n" + ChatColor.GRAY + "O Servidor se encontra em Beta " + "\n" + "Bugs? PorFavor nos informen pelo Twitter: §b§l@ArkuzMCOFICIAL" + "\n" +ChatColor.GRAY + "Mais informaçoes em nosso site: §nConstrução...");
+			player.kickPlayer(ChatColor.DARK_RED + "" + ChatColor.BOLD + "REINCIANDO" + "\n" + "\n" + ChatColor.GRAY
+					+ "            Estamos reiniciando para melhorar sua jogabilidade" + "\n" + ChatColor.GRAY
+					+ "O Servidor se encontra em Beta " + "\n"
+					+ "Bugs? PorFavor nos informen pelo Twitter: §b§l@ArkuzMCOFICIAL" + "\n" + ChatColor.GRAY
+					+ "Mais informaçoes em nosso site: §nConstrução...");
 		}
-		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable(){
-		       public void run()
-		       {
-		         String[] msg = {Strings.servidormensagem + API.mensagem1,
-		        		 Strings.servidormensagem + API.mensagem2,
-		        		 Strings.servidormensagem + API.mensagem3,
-		        		 Strings.servidormensagem + API.mensagem4,
-		        		 Strings.servidormensagem + API.mensagem5};
-		         
-		         Bukkit.getServer().broadcastMessage(msg[new java.util.Random().nextInt(msg.length)]);
-		       }
-			     }, 40L, 1900L);
+		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+			public void run() {
+				String[] msg = { Strings.servidormensagem + API.mensagem1, Strings.servidormensagem + API.mensagem2,
+						Strings.servidormensagem + API.mensagem3, Strings.servidormensagem + API.mensagem4,
+						Strings.servidormensagem + API.mensagem5 };
+
+				Bukkit.getServer().broadcastMessage(msg[new java.util.Random().nextInt(msg.length)]);
+			}
+		}, 40L, 1900L);
 		for (World world : Bukkit.getServer().getWorlds()) {
 			world.setGameRuleValue("doDaylightCycle", "false");
 		}
-		}
-	
+	}
+
 	@Override
 	public void onDisable() {
 		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "O Servidor foi desligado corretamente !");
 	}
-	
+
 	void Eventos() {
 		Bukkit.getPluginManager().registerEvents(new Challenge(), this);
 		Bukkit.getPluginManager().registerEvents(new TabAPI(), this);
@@ -206,7 +209,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new Redstone(this), this);
 		Bukkit.getPluginManager().registerEvents(new Manutençao(), this);
 	}
-	
+
 	void EventosKits() {
 		Bukkit.getPluginManager().registerEvents(new Grappler(), this);
 		Bukkit.getPluginManager().registerEvents(new Hulk(), this);
@@ -233,11 +236,11 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new Snail(), this);
 		Bukkit.getPluginManager().registerEvents(new Viper(), this);
 	}
-	
+
 	void Comandos() {
-		getCommand("desabilitar").setExecutor(new Desabilitar());	
-		getCommand("habilitar").setExecutor(new Habilitar());	
-		getCommand("groupyoutuber").setExecutor(new GroupYoutuber());	
+		getCommand("desabilitar").setExecutor(new Desabilitar());
+		getCommand("habilitar").setExecutor(new Habilitar());
+		getCommand("groupyoutuber").setExecutor(new GroupYoutuber());
 		getCommand("cps").setExecutor(new ClickTest());
 		getCommand("report").setExecutor(new Report(this));
 		getCommand("sc").setExecutor(new Sc());
@@ -283,9 +286,9 @@ public class Main extends JavaPlugin {
 		getCommand("tphere").setExecutor(new Tp());
 		getCommand("tpall").setExecutor(new Tp());
 		getCommand("evento").setExecutor(new Evento());
-		
+
 	}
-	
+
 	void LoadEventosExtras() {
 		EventoConfig.getConfig().ConfigEnable(this);
 		AuthConfig.getConfig().ConfigEnable(this);

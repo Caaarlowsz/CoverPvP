@@ -14,33 +14,31 @@ import org.bukkit.inventory.meta.ItemMeta;
 import me.shooyudev.Comandos.Habilitar;
 
 public class KitsMenus {
-	
-@SuppressWarnings("deprecation")
-public static void menuentory(Player p){
-		
-		
+
+	public static void menuentory(Player p) {
+
 		Inventory menu = Bukkit.createInventory(p, 54, "§7Kits");
-		
-		ItemStack kits = new ItemStack(Material.getMaterial(351), 1, (short)10);
+
+		ItemStack kits = new ItemStack(Material.getMaterial(351), 1, (short) 10);
 		ItemMeta kkits = kits.getItemMeta();
 		kkits.setDisplayName("§eKits");
-		kits.setItemMeta(kkits);		
-		
-		ItemStack Warps = new ItemStack(Material.getMaterial(351), 1, (short)8);
+		kits.setItemMeta(kkits);
+
+		ItemStack Warps = new ItemStack(Material.getMaterial(351), 1, (short) 8);
 		ItemMeta kWarps = Warps.getItemMeta();
 		kWarps.setDisplayName("§fWarps");
-		Warps.setItemMeta(kWarps);	
-		
-		ItemStack loja = new ItemStack(Material.getMaterial(351), 1, (short)8);
+		Warps.setItemMeta(kWarps);
+
+		ItemStack loja = new ItemStack(Material.getMaterial(351), 1, (short) 8);
 		ItemMeta kloja = loja.getItemMeta();
 		kloja.setDisplayName("§fMenu");
-		loja.setItemMeta(kloja);	
-		
-		ItemStack vidro = new ItemStack(Material.getMaterial(160), 1, (short)0);
+		loja.setItemMeta(kloja);
+
+		ItemStack vidro = new ItemStack(Material.getMaterial(160), 1, (short) 0);
 		ItemMeta kvidro = vidro.getItemMeta();
 		kvidro.setDisplayName(ChatColor.GRAY + "");
-		vidro.setItemMeta(kvidro);	
-		
+		vidro.setItemMeta(kvidro);
+
 		menu.setItem(0, vidro);
 		menu.setItem(1, vidro);
 		menu.setItem(2, vidro);
@@ -57,12 +55,12 @@ public static void menuentory(Player p){
 		menu.setItem(51, vidro);
 		menu.setItem(52, vidro);
 		menu.setItem(53, vidro);
-		
+
 		menu.setItem(49, kits);
 		menu.setItem(48, Warps);
 		menu.setItem(50, loja);
-		
-		if(p.hasPermission("kit.pvp") || Habilitar.fullkit || Habilitar.vip  || Habilitar.mvp || Habilitar.pro) {
+
+		if (p.hasPermission("kit.pvp") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.STONE_SWORD);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -82,7 +80,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.specialist") || Habilitar.fullkit  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.specialist") || Habilitar.fullkit || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.ENCHANTED_BOOK);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -102,7 +100,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.gladiator") || Habilitar.fullkit  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.gladiator") || Habilitar.fullkit || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.IRON_FENCE);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -112,7 +110,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.viper") || Habilitar.fullkit || Habilitar.vip  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.viper") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.SPIDER_EYE);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -122,7 +120,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.snail") || Habilitar.fullkit || Habilitar.vip  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.snail") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.WEB);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -132,7 +130,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.ninja") || Habilitar.fullkit  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.ninja") || Habilitar.fullkit || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.EMERALD);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -142,7 +140,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.anchor") || Habilitar.fullkit  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.anchor") || Habilitar.fullkit || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.ANVIL);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -272,7 +270,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.hulk") || Habilitar.fullkit || Habilitar.vip  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.hulk") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.SADDLE);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -292,7 +290,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		if (p.hasPermission("kit.sumo") || Habilitar.fullkit || Habilitar.vip  || Habilitar.mvp || Habilitar.pro) {
+		if (p.hasPermission("kit.sumo") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
 			ItemStack pvp = new ItemStack(Material.APPLE);
 			ItemMeta kpvp = pvp.getItemMeta();
 			ArrayList<String> desc = new ArrayList<>();
@@ -302,7 +300,7 @@ public static void menuentory(Player p){
 			pvp.setItemMeta(kpvp);
 			menu.addItem(new ItemStack[] { pvp });
 		}
-		
+
 		p.openInventory(menu);
 		p.playSound(p.getLocation(), Sound.LEVEL_UP, 1.0F, 1.0F);
 	}

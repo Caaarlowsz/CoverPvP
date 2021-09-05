@@ -6,6 +6,14 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.bukkit.ChatColor;
+import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
+import org.bukkit.entity.Player;
+
+import ca.wacos.nametagedit.NametagAPI;
+import me.shooyudev.Main;
+import me.shooyudev.Manager.Manager;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.MathHelper;
 import net.minecraft.server.v1_7_R4.PacketPlayOutEntityDestroy;
@@ -16,18 +24,8 @@ import net.minecraft.server.v1_7_R4.PacketPlayOutPlayerInfo;
 import net.minecraft.util.com.mojang.authlib.GameProfile;
 import net.minecraft.util.com.mojang.authlib.properties.Property;
 
-import org.bukkit.ChatColor;
-import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
-import org.bukkit.entity.Player;
-
-import ca.wacos.nametagedit.NametagAPI;
-import me.shooyudev.Main;
-import me.shooyudev.Manager.Manager;
-
-
-@SuppressWarnings("deprecation")
 public class FakePlayerUtils {
-	
+
 	public static void changePlayerName(Player player, String name) {
 		changePlayerName(player, name, true);
 	}
@@ -47,14 +45,15 @@ public class FakePlayerUtils {
 			entityPlayer.getClass().getDeclaredField("displayName").set(entityPlayer, name);
 			entityPlayer.getClass().getDeclaredField("listName").set(entityPlayer, name);
 		} catch (Exception e) {
-			
+
 		}
 		if (respawn) {
 			respawnPlayer(player, players);
 		}
 		NametagAPI.setPrefix(player.getName(), "§7");
-		NametagAPI.setSuffix(player.getName(), " §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-		  player.setDisplayName("§7" + player.getName());
+		NametagAPI.setSuffix(player.getName(),
+				" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+		player.setDisplayName("§7" + player.getName());
 	}
 
 	public static void removePlayerSkin(Player player) {
@@ -82,7 +81,7 @@ public class FakePlayerUtils {
 			playerProfile.getProperties().put("textures",
 					(Property) CustomPlayerAPI.Textures.get(new GameProfile(uuid, name)));
 		} catch (ExecutionException e) {
-			
+
 		}
 		if (respawn) {
 			respawnPlayer(player, Main.getPlugin(Main.class).getServer().getOnlinePlayers());
@@ -98,8 +97,9 @@ public class FakePlayerUtils {
 				((CraftPlayer) online).getHandle().playerConnection.sendPacket(addPlayerInfo);
 				((CraftPlayer) online).getHandle().playerConnection.sendPacket(updatePlayerInfo);
 				NametagAPI.setPrefix(player.getName(), "§7");
-				NametagAPI.setSuffix(player.getName(), " §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-				  player.setDisplayName("§7" + player.getName());
+				NametagAPI.setSuffix(player.getName(),
+						" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+				player.setDisplayName("§7" + player.getName());
 			}
 		}
 	}
@@ -135,8 +135,9 @@ public class FakePlayerUtils {
 					((CraftPlayer) online).getHandle().playerConnection.sendPacket(metadata);
 					((CraftPlayer) online).getHandle().playerConnection.sendPacket(headRotation);
 					NametagAPI.setPrefix(player.getName(), "§7");
-					NametagAPI.setSuffix(player.getName(), " §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-					  player.setDisplayName("§7" + player.getName());
+					NametagAPI.setSuffix(player.getName(),
+							" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+					player.setDisplayName("§7" + player.getName());
 				}
 			}
 		}
@@ -146,6 +147,6 @@ public class FakePlayerUtils {
 		Pattern pattern = Pattern.compile("[a-zA-Z0-9_]{1,16}");
 		Matcher matcher = pattern.matcher(username);
 		return matcher.matches();
-		
+
 	}
 }

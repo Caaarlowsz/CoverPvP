@@ -10,37 +10,42 @@ import org.bukkit.plugin.Plugin;
 
 public class ArenaConfig {
 
-public class Arenas {
-}
-public static ArrayList<String> login = new ArrayList<>();
+	public class Arenas {
+	}
+
+	public static ArrayList<String> login = new ArrayList<>();
 
 	public static ArenaConfig pasta = new ArenaConfig();
 	FileConfiguration Arenas;
 	File FileArenas;
-	public static ArenaConfig getConfig(){
+
+	public static ArenaConfig getConfig() {
 		return pasta;
 	}
-	public void ConfigEnable(Plugin plugin){
-		if(!plugin.getDataFolder().exists()){
+
+	public void ConfigEnable(Plugin plugin) {
+		if (!plugin.getDataFolder().exists()) {
 			plugin.getDataFolder().mkdir();
 		}
 		FileArenas = new File(plugin.getDataFolder(), "Arenas.yml");
-		if(FileArenas.exists()){
-			try{
+		if (FileArenas.exists()) {
+			try {
 				FileArenas.createNewFile();
-			} catch(IOException e){
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		Arenas = YamlConfiguration.loadConfiguration(FileArenas);
 	}
-	public FileConfiguration config(){
+
+	public FileConfiguration config() {
 		return Arenas;
 	}
-	public void saveConfigs(){
-		try{
+
+	public void saveConfigs() {
+		try {
 			Arenas.save(FileArenas);
-		} catch(IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

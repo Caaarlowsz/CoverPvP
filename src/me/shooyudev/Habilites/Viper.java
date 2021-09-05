@@ -12,19 +12,19 @@ import org.bukkit.potion.PotionEffectType;
 
 import me.shooyudev.API.KitAPI;
 
-public class Viper implements Listener{
-	
+public class Viper implements Listener {
+
 	@EventHandler
 	public void bater(EntityDamageByEntityEvent e) {
 		if (e.getEntity() instanceof Player && e.getDamager() instanceof Player) {
-			Player p = (Player)e.getEntity();
-			Player t = (Player)e.getDamager();
-			
+			Player p = (Player) e.getEntity();
+			Player t = (Player) e.getDamager();
+
 			if ((KitAPI.getKit(t) == "Viper") && (t.getItemInHand().getType() == Material.STONE_SWORD)) {
 				if (new Random().nextInt(100) <= 30) {
 					p.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 100, 0));
 				}
- 			}
+			}
 		}
 	}
- }
+}

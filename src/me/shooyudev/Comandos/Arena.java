@@ -28,7 +28,8 @@ public class Arena implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("1")) {
 				ArenaConfig.getConfig();
 				API.setWarp(p, "Arena");
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "1" + ChatColor.GRAY + " Setada com Sucesso!");
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "1"
+						+ ChatColor.GRAY + " Setada com Sucesso!");
 				ArenaConfig.getConfig().config().set("arena1.x", Double.valueOf(p.getLocation().getX()));
 				ArenaConfig.getConfig().config().set("arena1.y", Double.valueOf(p.getLocation().getY()));
 				ArenaConfig.getConfig().config().set("arena1.z", Double.valueOf(p.getLocation().getZ()));
@@ -41,7 +42,8 @@ public class Arena implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("2")) {
 				ArenaConfig.getConfig();
 				API.setWarp(p, "Arena");
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "2" + ChatColor.GRAY + " Setada com Sucesso!");
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "2"
+						+ ChatColor.GRAY + " Setada com Sucesso!");
 				ArenaConfig.getConfig().config().set("arena2.x", Double.valueOf(p.getLocation().getX()));
 				ArenaConfig.getConfig().config().set("arena2.y", Double.valueOf(p.getLocation().getY()));
 				ArenaConfig.getConfig().config().set("arena2.z", Double.valueOf(p.getLocation().getZ()));
@@ -54,7 +56,8 @@ public class Arena implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("3")) {
 				ArenaConfig.getConfig();
 				API.setWarp(p, "Arena");
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "3" + ChatColor.GRAY + " Setada com Sucesso!");
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "3"
+						+ ChatColor.GRAY + " Setada com Sucesso!");
 				ArenaConfig.getConfig().config().set("arena3.x", Double.valueOf(p.getLocation().getX()));
 				ArenaConfig.getConfig().config().set("arena3.y", Double.valueOf(p.getLocation().getY()));
 				ArenaConfig.getConfig().config().set("arena3.z", Double.valueOf(p.getLocation().getZ()));
@@ -67,7 +70,8 @@ public class Arena implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("4")) {
 				ArenaConfig.getConfig();
 				API.setWarp(p, "Arena");
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "4" + ChatColor.GRAY + " Setada com Sucesso!");
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "4"
+						+ ChatColor.GRAY + " Setada com Sucesso!");
 				ArenaConfig.getConfig().config().set("arena4.x", Double.valueOf(p.getLocation().getX()));
 				ArenaConfig.getConfig().config().set("arena4.y", Double.valueOf(p.getLocation().getY()));
 				ArenaConfig.getConfig().config().set("arena4.z", Double.valueOf(p.getLocation().getZ()));
@@ -80,7 +84,8 @@ public class Arena implements Listener, CommandExecutor {
 			if (args[0].equalsIgnoreCase("5")) {
 				ArenaConfig.getConfig();
 				API.setWarp(p, "Arena");
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "5" + ChatColor.GRAY + " Setada com Sucesso!");
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Arena " + ChatColor.YELLOW + "5"
+						+ ChatColor.GRAY + " Setada com Sucesso!");
 				ArenaConfig.getConfig().config().set("arena5.x", Double.valueOf(p.getLocation().getX()));
 				ArenaConfig.getConfig().config().set("arena5.y", Double.valueOf(p.getLocation().getY()));
 				ArenaConfig.getConfig().config().set("arena5.z", Double.valueOf(p.getLocation().getZ()));

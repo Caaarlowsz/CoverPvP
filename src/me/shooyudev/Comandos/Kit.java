@@ -10,11 +10,11 @@ import me.shooyudev.Manager.Manager;
 import me.shooyudev.Utills.Strings;
 
 public class Kit extends Manager {
-	
+
 	@Override
 	public void Comando(CommandSender sender, Command command, String[] argumentos) {
-		Player p = (Player)sender;
-		
+		Player p = (Player) sender;
+
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Use /kit (kit)");
 			return;
@@ -24,7 +24,8 @@ public class Kit extends Manager {
 			return;
 		} else {
 			if (argumentos[0].equalsIgnoreCase("pvp")) {
-				if (p.hasPermission("kit.pvp") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.pvp") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.PvP(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lPvP");
@@ -39,7 +40,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("kangaroo")) {
-				if (p.hasPermission("kit.kangaroo") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.kangaroo") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Kangaroo(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lKangaroo");
@@ -54,10 +56,12 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("specialist")) {
-				if (p.hasPermission("kit.specialist") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.specialist") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Specialist(p);
-						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lSpecialist");
+						p.sendMessage(
+								Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lSpecialist");
 						return;
 					} else {
 						p.sendMessage(Strings.pegoukit);
@@ -84,10 +88,12 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("gladiator")) {
-				if (p.hasPermission("kit.gladiator") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.gladiator") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Gladiator(p);
-						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lGladiator");
+						p.sendMessage(
+								Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lGladiator");
 						return;
 					} else {
 						p.sendMessage(Strings.pegoukit);
@@ -99,7 +105,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("snail")) {
-				if (p.hasPermission("kit.snail") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.snail") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Snail(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lSnail");
@@ -114,7 +121,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("viper")) {
-				if (p.hasPermission("kit.viper") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.viper") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Viper(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lViper");
@@ -129,7 +137,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("ninja")) {
-				if (p.hasPermission("kit.ninja") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.ninja") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Ninja(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lNinja");
@@ -147,7 +156,8 @@ public class Kit extends Manager {
 				if (p.hasPermission("kit.fisherman") || Habilitar.fullkit || Habilitar.mvp || Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Fisherman(p);
-						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lFisherman");
+						p.sendMessage(
+								Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lFisherman");
 						return;
 					} else {
 						p.sendMessage(Strings.pegoukit);
@@ -159,7 +169,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("switcher")) {
-				if (p.hasPermission("kit.switcher") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.switcher") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Switcher(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lSwitcher");
@@ -189,7 +200,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("anchor")) {
-				if (p.hasPermission("kit.anchor") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.anchor") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Anchor(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lAnchor");
@@ -338,7 +350,8 @@ public class Kit extends Manager {
 					return;
 				}
 			}
-			if (argumentos[0].equalsIgnoreCase("hulk") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+			if (argumentos[0].equalsIgnoreCase("hulk") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+					|| Habilitar.pro) {
 				if (p.hasPermission("kit.hulk")) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Hulk(p);
@@ -369,7 +382,8 @@ public class Kit extends Manager {
 				}
 			}
 			if (argumentos[0].equalsIgnoreCase("sumo") || Habilitar.fullkit) {
-				if (p.hasPermission("kit.sumo") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp || Habilitar.pro) {
+				if (p.hasPermission("kit.sumo") || Habilitar.fullkit || Habilitar.vip || Habilitar.mvp
+						|| Habilitar.pro) {
 					if (KitAPI.getKit(p) == "Nenhum") {
 						KitAPI.Sumo(p);
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce selecionou o kit §e§lSumo");
@@ -383,9 +397,10 @@ public class Kit extends Manager {
 					return;
 				}
 			}
-		   p.sendMessage(Strings.servidor + ChatColor.GRAY + "O Kit §e§l" + argumentos[0] + ChatColor.GRAY + " Nao existe!");
+			p.sendMessage(
+					Strings.servidor + ChatColor.GRAY + "O Kit §e§l" + argumentos[0] + ChatColor.GRAY + " Nao existe!");
 		}
-		
+
 	}
 
 }
