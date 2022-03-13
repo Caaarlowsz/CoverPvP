@@ -15,7 +15,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.CooldownAPI;
 import me.shooyudev.API.KitAPI;
 
@@ -51,7 +51,7 @@ public class Sumo implements Listener {
 							e.getPlayer().teleport(Local.add(0.0D, 1.0D, 0.0D));
 							CooldownAPI.addCooldown(p, 35);
 							this.Cima.add(p.getName());
-							Bukkit.getServer().getScheduler().runTaskLater(Main.getPlugin(), new Runnable() {
+							Bukkit.getServer().getScheduler().runTaskLater(CoverPvP.getPlugin(), new Runnable() {
 								public void run() {
 									a.setType(Material.AIR);
 									Sumo.this.remover.remove(a);

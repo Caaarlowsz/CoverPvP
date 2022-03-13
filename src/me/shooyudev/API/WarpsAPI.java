@@ -7,7 +7,7 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Configs.WarpsConfig;
 import me.shooyudev.Utills.FpsEnum;
 import me.shooyudev.Utills.Strings;
@@ -15,12 +15,12 @@ import me.shooyudev.Utills.Strings;
 public class WarpsAPI implements Listener {
 
 	public static void iniciarFPS() {
-		Main.estado = FpsEnum.FPS1;
+		CoverPvP.estado = FpsEnum.FPS1;
 
 	}
 
 	public static void removerFPS() {
-		Main.estado = FpsEnum.NORMAL;
+		CoverPvP.estado = FpsEnum.NORMAL;
 
 	}
 

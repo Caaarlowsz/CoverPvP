@@ -1,6 +1,6 @@
 name: CoverPvP
 version: 2.0.0
-main: me.shooyudev.Main
+main: com.github.caaarlowsz.covermc.kitpvp.Main
 author: [Shooyu , Gabriel]
 commands:
   tag:

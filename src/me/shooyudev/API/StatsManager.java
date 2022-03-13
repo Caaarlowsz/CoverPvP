@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.scoreboarding.Updater;
 
 public class StatsManager {
@@ -18,7 +18,7 @@ public class StatsManager {
 	public static FileConfiguration cfile;
 
 	public StatsManager() {
-		Plugin plugin = Main.getPlugin();
+		Plugin plugin = CoverPvP.getPlugin();
 
 		if (plugin.getDataFolder().exists() == false) {
 			plugin.getDataFolder().mkdir();

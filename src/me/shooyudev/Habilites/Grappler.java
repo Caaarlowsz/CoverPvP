@@ -16,12 +16,12 @@ import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.KitAPI;
 
 public class Grappler implements Listener {
 
-	public static Main plugin;
+	public static CoverPvP plugin;
 	Map<Player, Cordinha> hooks = new HashMap<>();
 
 	@EventHandler

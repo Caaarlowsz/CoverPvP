@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.StatsManager;
@@ -23,18 +23,18 @@ public class DeathEvents implements Listener {
 		Player d = e.getEntity().getKiller();
 		WarpsAPI.Ir(p, "Spawn");
 		API.setWarp(p, "Spawn");
-		Proteção.setImortalidade(p, true);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+		Proteï¿½ï¿½o.setImortalidade(p, true);
+		Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 			public void run() {
 				p.spigot().respawn();
 			}
 		}, 1L);
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 			public void run() {
 				WarpsAPI.Ir(p, "Spawn");
 				API.setWarp(p, "Spawn");
 				API.itensSpawn(p);
-				Proteção.setImortalidade(p, true);
+				Proteï¿½ï¿½o.setImortalidade(p, true);
 			}
 		}, 2L);
 
@@ -45,11 +45,11 @@ public class DeathEvents implements Listener {
 
 			if (d != null) {
 
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você morreu para o Jogador: "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ morreu para o Jogador: "
 						+ ChatColor.GREEN + ChatColor.BOLD + d.getName());
 				p.sendMessage(ChatColor.BLUE + "" + ChatColor.BOLD + "Coins: " + ChatColor.GRAY + "-4");
 
-				d.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você matou o Jogador: " + ChatColor.RED
+				d.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ matou o Jogador: " + ChatColor.RED
 						+ ChatColor.BOLD + p.getName());
 				d.sendMessage(ChatColor.BLUE + "" + ChatColor.BOLD + "XP's: " + ChatColor.GRAY + "+1");
 				d.sendMessage(ChatColor.BLUE + "" + ChatColor.BOLD + "Coins: " + ChatColor.GRAY + "+20");
@@ -67,124 +67,124 @@ public class DeathEvents implements Listener {
 				e.getDrops().clear();
 
 				if (StatsManager.getKillStreak(d) == 5) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l5");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l5");
 				}
 				if (StatsManager.getKillStreak(d) == 10) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l10");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l10");
 				}
 				if (StatsManager.getKillStreak(d) == 15) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l15");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l15");
 				}
 				if (StatsManager.getKillStreak(d) == 20) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l20");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l20");
 				}
 				if (StatsManager.getKillStreak(d) == 25) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l25");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l25");
 				}
 				if (StatsManager.getKillStreak(d) == 30) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l30");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l30");
 				}
 				if (StatsManager.getKillStreak(d) == 35) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l35");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l35");
 				}
 				if (StatsManager.getKillStreak(d) == 40) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l40");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l40");
 				}
 				if (StatsManager.getKillStreak(d) == 45) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l45");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l45");
 				}
 				if (StatsManager.getKillStreak(d) == 50) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l50");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l50");
 				}
 				if (StatsManager.getKillStreak(d) == 55) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l55");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l55");
 				}
 				if (StatsManager.getKillStreak(d) == 60) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l60");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l60");
 				}
 				if (StatsManager.getKillStreak(d) == 65) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l65");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l65");
 				}
 				if (StatsManager.getKillStreak(d) == 70) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l70");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l70");
 				}
 				if (StatsManager.getKillStreak(d) == 75) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l75");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l75");
 				}
 				if (StatsManager.getKillStreak(d) == 80) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l80");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l80");
 				}
 				if (StatsManager.getKillStreak(d) == 85) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l85");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l85");
 				}
 				if (StatsManager.getKillStreak(d) == 90) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l90");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l90");
 				}
 				if (StatsManager.getKillStreak(d) == 95) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l95");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l95");
 				}
 				if (StatsManager.getKillStreak(d) == 100) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l100");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l100");
 				}
 				if (StatsManager.getKillStreak(d) == 105) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l105");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l105");
 				}
 				if (StatsManager.getKillStreak(d) == 110) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l110");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l110");
 				}
 				if (StatsManager.getKillStreak(d) == 115) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l115");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l115");
 				}
 				if (StatsManager.getKillStreak(d) == 120) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l120");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l120");
 				}
 				if (StatsManager.getKillStreak(d) == 125) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l125");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l125");
 				}
 				if (StatsManager.getKillStreak(d) == 130) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l130");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l130");
 				}
 				if (StatsManager.getKillStreak(d) == 135) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l135");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l135");
 				}
 				if (StatsManager.getKillStreak(d) == 140) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l140");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l140");
 				}
 				if (StatsManager.getKillStreak(d) == 145) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l145");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l145");
 				}
 				if (StatsManager.getKillStreak(d) == 150) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l150");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l150");
 				}
 				if (StatsManager.getKillStreak(d) == 155) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l155");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l155");
 				}
 				if (StatsManager.getKillStreak(d) == 160) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l160");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l160");
 				}
 				if (StatsManager.getKillStreak(d) == 165) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l165");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l165");
 				}
 				if (StatsManager.getKillStreak(d) == 170) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l170");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l170");
 				}
 				if (StatsManager.getKillStreak(d) == 175) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l175");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l175");
 				}
 				if (StatsManager.getKillStreak(d) == 180) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l180");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l180");
 				}
 				if (StatsManager.getKillStreak(d) == 185) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l185");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l185");
 				}
 				if (StatsManager.getKillStreak(d) == 190) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l190");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l190");
 				}
 				if (StatsManager.getKillStreak(d) == 195) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l195");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l195");
 				}
 				if (StatsManager.getKillStreak(d) == 200) {
-					Bukkit.broadcastMessage("§e§l" + d.getName() + " §7está com um killstreak de §a§l200");
+					Bukkit.broadcastMessage("ï¿½eï¿½l" + d.getName() + " ï¿½7estï¿½ com um killstreak de ï¿½aï¿½l200");
 				}
 			} else {
 				e.setDeathMessage(null);

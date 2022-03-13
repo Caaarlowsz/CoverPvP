@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 
 import me.shooyudev.Utills.Strings;
 
-public class Manutençao implements Listener, CommandExecutor {
+public class ManutenÃ§ao implements Listener, CommandExecutor {
 
 	public static boolean manutencao = false;
 
@@ -20,7 +20,7 @@ public class Manutençao implements Listener, CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String lbl, String[] args) {
 		Player p = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("manutencao")) {
-			if (!sender.hasPermission("cover.manuteçao")) {
+			if (!sender.hasPermission("cover.manuteï¿½ao")) {
 				p.sendMessage(Strings.permissaocomando);
 				return true;
 			}
@@ -40,12 +40,12 @@ public class Manutençao implements Listener, CommandExecutor {
 						manutencao = true;
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "manutencao esta sendo ativada ..");
 						p.sendMessage(
-								Strings.servidormensagem + ChatColor.GRAY + "A Manuteçao foi ativada com sucesso !");
+								Strings.servidormensagem + ChatColor.GRAY + "A Manuteï¿½ao foi ativada com sucesso !");
 						for (Player todos : Bukkit.getOnlinePlayers()) {
 							if (!(sender.hasPermission("cover.manutencao"))) {
 								todos.kickPlayer(Strings.servidor + "\n" + "\n"
-										+ "   §7O servidor acabou de entrar em manutencao" + "\n"
-										+ "Assim que possível, nós estaremos de volta!");
+										+ "   ï¿½7O servidor acabou de entrar em manutencao" + "\n"
+										+ "Assim que possï¿½vel, nï¿½s estaremos de volta!");
 								return true;
 							}
 						}
@@ -63,13 +63,13 @@ public class Manutençao implements Listener, CommandExecutor {
 						manutencao = true;
 						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "manutencao esta sendo ativada ..");
 						p.sendMessage(
-								Strings.servidormensagem + ChatColor.GRAY + "A Manuteçao foi ativada com sucesso !");
+								Strings.servidormensagem + ChatColor.GRAY + "A Manuteï¿½ao foi ativada com sucesso !");
 						for (Player todos : Bukkit.getOnlinePlayers()) {
 							if (!sender.hasPermission("cover.manutencao")) {
 								todos.kickPlayer(Strings.servidormensagem + "\n" + "\n"
-										+ "   §7O servidor acabou de entrar em manutencao" + "\n"
-										+ "Assim que possível, nós estaremos de volta!" + "\n" + "\n"
-										+ "§7Atenciosamente, " + Strings.servidormensagem);
+										+ "   ï¿½7O servidor acabou de entrar em manutencao" + "\n"
+										+ "Assim que possï¿½vel, nï¿½s estaremos de volta!" + "\n" + "\n"
+										+ "ï¿½7Atenciosamente, " + Strings.servidormensagem);
 								return true;
 							}
 						}
@@ -78,12 +78,12 @@ public class Manutençao implements Listener, CommandExecutor {
 				}
 				if (args[0].equalsIgnoreCase("off")) {
 					if (!(manutencao)) {
-						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "O Servidor Não Está em manutencao!");
+						p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "O Servidor Nï¿½o Estï¿½ em manutencao!");
 						return true;
 					} else {
 						manutencao = false;
-						p.sendMessage("Manutenção Desativada!");
-						p.sendMessage("Voce desativou a Manutenção!");
+						p.sendMessage("Manutenï¿½ï¿½o Desativada!");
+						p.sendMessage("Voce desativou a Manutenï¿½ï¿½o!");
 						return true;
 					}
 				}
@@ -95,10 +95,10 @@ public class Manutençao implements Listener, CommandExecutor {
 	@EventHandler
 	public void aoEntrarManutencao(PlayerLoginEvent e) {
 		Player p = e.getPlayer();
-		if ((manutencao) && (!(p.hasPermission("cover.entrarmanuteçao")))) {
+		if ((manutencao) && (!(p.hasPermission("cover.entrarmanuteï¿½ao")))) {
 			e.disallow(PlayerLoginEvent.Result.KICK_OTHER,
-					Strings.servidor + "\n" + "\n" + "   §7O servidor acabou de entrar em manutencao" + "\n"
-							+ "Assim que possível, nós estaremos de volta!" + "\n" + "\n" + "§7Atenciosamente, "
+					Strings.servidor + "\n" + "\n" + "   ï¿½7O servidor acabou de entrar em manutencao" + "\n"
+							+ "Assim que possï¿½vel, nï¿½s estaremos de volta!" + "\n" + "\n" + "ï¿½7Atenciosamente, "
 							+ Strings.servidormensagem);
 		}
 	}

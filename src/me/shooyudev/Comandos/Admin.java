@@ -24,11 +24,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.util.Vector;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.StatsManager;
-import me.shooyudev.Events.Proteção;
+ï¿½ï¿½o;
 import me.shooyudev.Manager.Manager;
 import me.shooyudev.Utills.Strings;
 
@@ -60,7 +60,7 @@ public class Admin implements CommandExecutor, Listener {
 					Admin.emAdmin.add(p);
 					Admin.salvarinv.put(p.getName(), p.getInventory().getContents());
 					Admin.salrvararmor.put(p.getName(), p.getInventory().getArmorContents());
-					Proteção.setImortalidade(p, true);
+					Proteï¿½ï¿½o.setImortalidade(p, true);
 					p.getInventory().clear();
 					p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Voce entrou no modo admin");
 					p.setHealth(20.0);
@@ -68,7 +68,7 @@ public class Admin implements CommandExecutor, Listener {
 					p.setGameMode(GameMode.CREATIVE);
 					API.darItem(p, Material.MAGMA_CREAM, 1, ChatColor.YELLOW + "" + ChatColor.BOLD + "Trocar - "
 							+ ChatColor.GRAY + "(Clique para Sair/Voltar)", 1);
-					API.darItem(p, Material.PAPER, 1, ChatColor.YELLOW + "" + ChatColor.BOLD + "Informaçoes - "
+					API.darItem(p, Material.PAPER, 1, ChatColor.YELLOW + "" + ChatColor.BOLD + "Informaï¿½oes - "
 							+ ChatColor.GRAY + "(Clique para checar)", 5);
 					API.darItem(p, Material.FEATHER, 1, ChatColor.YELLOW + "" + ChatColor.BOLD + "Nofall - "
 							+ ChatColor.GRAY + "(Clique para testar nofall)", 3);
@@ -127,18 +127,18 @@ public class Admin implements CommandExecutor, Listener {
 		if (Admin.emAdmin.contains(p) && p.getInventory().getItemInHand().getType() == Material.PAPER) {
 			final Damageable hp = (Damageable) t;
 			p.sendMessage(" ");
-			p.sendMessage("         " + ChatColor.GOLD + ChatColor.BOLD + "§6»  " + ChatColor.RED + ChatColor.BOLD
-					+ "CHECANDO" + ChatColor.GOLD + ChatColor.BOLD + " §6«          ");
+			p.sendMessage("         " + ChatColor.GOLD + ChatColor.BOLD + "ï¿½6ï¿½  " + ChatColor.RED + ChatColor.BOLD
+					+ "CHECANDO" + ChatColor.GOLD + ChatColor.BOLD + " ï¿½6ï¿½          ");
 			p.sendMessage(" ");
-			p.sendMessage(ChatColor.WHITE + "- " + "§7NickName: §6" + t.getDisplayName());
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Vida: §6" + (int) hp.getHealth());
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Kit: §6" + KitAPI.getKit(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Rank: §6" + Manager.RankAndPrefix(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Matou: §6" + StatsManager.getKills(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Morreu: §6" + StatsManager.getDeaths(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Xp: §6" + StatsManager.getXp(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7Coins: §6" + StatsManager.getCoins(t));
-			p.sendMessage(ChatColor.WHITE + "- " + "§7IP: §6" + t.getAddress().getHostString());
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7NickName: ï¿½6" + t.getDisplayName());
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Vida: ï¿½6" + (int) hp.getHealth());
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Kit: ï¿½6" + KitAPI.getKit(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Rank: ï¿½6" + Manager.RankAndPrefix(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Matou: ï¿½6" + StatsManager.getKills(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Morreu: ï¿½6" + StatsManager.getDeaths(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Xp: ï¿½6" + StatsManager.getXp(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7Coins: ï¿½6" + StatsManager.getCoins(t));
+			p.sendMessage(ChatColor.WHITE + "- " + "ï¿½7IP: ï¿½6" + t.getAddress().getHostString());
 			p.sendMessage(" ");
 		}
 	}
@@ -151,13 +151,13 @@ public class Admin implements CommandExecutor, Listener {
 				&& p.getItemInHand().getType() == Material.MAGMA_CREAM) {
 			e.setCancelled(true);
 			final BukkitScheduler scheduler = Bukkit.getScheduler();
-			scheduler.scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			scheduler.scheduleSyncDelayedTask(CoverPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");
 				}
 			}, 0L);
-			scheduler.scheduleSyncDelayedTask(Main.plugin, (Runnable) new Runnable() {
+			scheduler.scheduleSyncDelayedTask(CoverPvP.plugin, (Runnable) new Runnable() {
 				@Override
 				public void run() {
 					p.chat("/admin");

@@ -17,11 +17,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.WarpsAPI;
-import me.shooyudev.Events.Proteção;
+ï¿½ï¿½o;
 import me.shooyudev.Utills.Strings;
 import me.shooyudev.menus.WarpsMenus;
 import me.shooyudev.scoreboarding.Updater;
@@ -48,9 +48,9 @@ public class Warp implements CommandExecutor, Listener {
 				p.closeInventory();
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp"
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp"
 						+ ChatColor.YELLOW + ChatColor.GOLD + " FPS Sem Armadura" + ChatColor.WHITE + "!");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						p.setGameMode(GameMode.SURVIVAL);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -73,7 +73,7 @@ public class Warp implements CommandExecutor, Listener {
 							p.getInventory().setItem(i, sopa);
 							p.updateInventory();
 						}
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						p.getInventory().setItem(13,
 								API.criarItem(p, Material.RED_MUSHROOM, "", new String[] {}, 64, (short) 0));
@@ -100,9 +100,9 @@ public class Warp implements CommandExecutor, Listener {
 				p.closeInventory();
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp"
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp"
 						+ ChatColor.YELLOW + ChatColor.GOLD + " FPS Com Armadura" + ChatColor.WHITE + "!");
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 
 						p.setGameMode(GameMode.SURVIVAL);
@@ -126,7 +126,7 @@ public class Warp implements CommandExecutor, Listener {
 							p.getInventory().setItem(i, sopa);
 							p.updateInventory();
 						}
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						p.getInventory().setItem(13,
 								API.criarItem(p, Material.RED_MUSHROOM, "", new String[] {}, 64, (short) 0));
@@ -147,7 +147,7 @@ public class Warp implements CommandExecutor, Listener {
 				}, 3 * 20);
 			}
 			if (Args[0].equalsIgnoreCase("challenge")) {
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp "
 						+ ChatColor.YELLOW + ChatColor.BOLD + " LAVACHALLENGE " + ChatColor.WHITE + "!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 99999, 99999));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
@@ -157,7 +157,7 @@ public class Warp implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						Updater.UpdateScore(p);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -171,7 +171,7 @@ public class Warp implements CommandExecutor, Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 						WarpsAPI.removerFPS();
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						WarpsAPI.Ir(p, "Challenge");
 						API.setWarp(p, "Challenge");
@@ -194,7 +194,7 @@ public class Warp implements CommandExecutor, Listener {
 				}, 3 * 20);
 			}
 			if (Args[0].equalsIgnoreCase("knockback")) {
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp "
 						+ ChatColor.YELLOW + ChatColor.BOLD + " KNOCKBACK " + ChatColor.WHITE + "!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 99999, 99999));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
@@ -204,7 +204,7 @@ public class Warp implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						Updater.UpdateScore(p);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -218,7 +218,7 @@ public class Warp implements CommandExecutor, Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 						WarpsAPI.removerFPS();
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						WarpsAPI.Ir(p, "Knockback");
 						API.setWarp(p, "Knockback");
@@ -233,7 +233,7 @@ public class Warp implements CommandExecutor, Listener {
 
 						ItemStack Espada = new ItemStack(Material.STICK);
 						ItemMeta kEspada = Espada.getItemMeta();
-						kEspada.setDisplayName("§eKnockBack");
+						kEspada.setDisplayName("ï¿½eKnockBack");
 						kEspada.addEnchant(Enchantment.KNOCKBACK, 5, true);
 						Espada.setItemMeta(kEspada);
 
@@ -249,7 +249,7 @@ public class Warp implements CommandExecutor, Listener {
 				}, 3 * 20);
 			}
 			if (Args[0].equalsIgnoreCase("fisherman")) {
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp "
 						+ ChatColor.YELLOW + ChatColor.BOLD + " KNOCKBACK " + ChatColor.WHITE + "!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 99999, 99999));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
@@ -259,7 +259,7 @@ public class Warp implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						Updater.UpdateScore(p);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -273,7 +273,7 @@ public class Warp implements CommandExecutor, Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 						WarpsAPI.removerFPS();
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						WarpsAPI.Ir(p, "Fisherman");
 						API.setWarp(p, "Fisherman");
@@ -288,7 +288,7 @@ public class Warp implements CommandExecutor, Listener {
 
 						ItemStack Espada = new ItemStack(Material.FISHING_ROD);
 						ItemMeta kEspada = Espada.getItemMeta();
-						kEspada.setDisplayName("§eFisherman");
+						kEspada.setDisplayName("ï¿½eFisherman");
 						Espada.setItemMeta(kEspada);
 
 						p.getInventory().setItem(0, Espada);
@@ -303,7 +303,7 @@ public class Warp implements CommandExecutor, Listener {
 				}, 3 * 20);
 			}
 			if (Args[0].equalsIgnoreCase("textura")) {
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp "
 						+ ChatColor.YELLOW + ChatColor.BOLD + " TEXTURA " + ChatColor.WHITE + "!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 99999, 99999));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
@@ -313,7 +313,7 @@ public class Warp implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						Updater.UpdateScore(p);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -327,7 +327,7 @@ public class Warp implements CommandExecutor, Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 						WarpsAPI.removerFPS();
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						WarpsAPI.Ir(p, "Textura");
 						API.setWarp(p, "Textura");
@@ -336,37 +336,37 @@ public class Warp implements CommandExecutor, Listener {
 
 						ItemStack Espada = new ItemStack(Material.STONE_SWORD);
 						ItemMeta kEspada = Espada.getItemMeta();
-						kEspada.setDisplayName("§eEspada");
+						kEspada.setDisplayName("ï¿½eEspada");
 						Espada.setItemMeta(kEspada);
 
 						ItemStack Espada1 = new ItemStack(Material.WOOD_SWORD);
 						ItemMeta kEspada1 = Espada1.getItemMeta();
-						kEspada1.setDisplayName("§eEspada1");
+						kEspada1.setDisplayName("ï¿½eEspada1");
 						Espada1.setItemMeta(kEspada1);
 
 						ItemStack Espada2 = new ItemStack(Material.GOLD_SWORD);
 						ItemMeta kEspada2 = Espada2.getItemMeta();
-						kEspada2.setDisplayName("§eEspada2");
+						kEspada2.setDisplayName("ï¿½eEspada2");
 						Espada2.setItemMeta(kEspada2);
 
 						ItemStack Espada3 = new ItemStack(Material.IRON_SWORD);
 						ItemMeta kEspada3 = Espada3.getItemMeta();
-						kEspada3.setDisplayName("§eEspada3");
+						kEspada3.setDisplayName("ï¿½eEspada3");
 						Espada3.setItemMeta(kEspada3);
 
 						ItemStack Espada4 = new ItemStack(Material.DIAMOND_SWORD);
 						ItemMeta kEspada4 = Espada4.getItemMeta();
-						kEspada4.setDisplayName("§eEspada4");
+						kEspada4.setDisplayName("ï¿½eEspada4");
 						Espada4.setItemMeta(kEspada4);
 
 						ItemStack Fisherman = new ItemStack(Material.FISHING_ROD);
 						ItemMeta kFisherman = Fisherman.getItemMeta();
-						kFisherman.setDisplayName("§eFisherman");
+						kFisherman.setDisplayName("ï¿½eFisherman");
 						Fisherman.setItemMeta(kFisherman);
 
 						ItemStack Kangaroo = new ItemStack(Material.FIREWORK);
 						ItemMeta kKangaroo = Kangaroo.getItemMeta();
-						kKangaroo.setDisplayName("§eKangaroo");
+						kKangaroo.setDisplayName("ï¿½eKangaroo");
 						Kangaroo.setItemMeta(kKangaroo);
 
 						p.getInventory().setItem(0, Espada);
@@ -385,7 +385,7 @@ public class Warp implements CommandExecutor, Listener {
 				}, 3 * 20);
 			}
 			if (Args[0].equalsIgnoreCase("voidchallenge")) {
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo enviado para a warp "
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo enviado para a warp "
 						+ ChatColor.YELLOW + ChatColor.BOLD + " VOIDCHALLENGE " + ChatColor.WHITE + "!");
 				p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 99999, 99999));
 				p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
@@ -395,7 +395,7 @@ public class Warp implements CommandExecutor, Listener {
 				p.getInventory().clear();
 				p.getInventory().setArmorContents(null);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						Updater.UpdateScore(p);
 						p.removePotionEffect(PotionEffectType.BLINDNESS);
@@ -409,7 +409,7 @@ public class Warp implements CommandExecutor, Listener {
 						p.getInventory().clear();
 						p.getInventory().setArmorContents(null);
 						WarpsAPI.removerFPS();
-						Proteção.setImortalidade(p, true);
+						Proteï¿½ï¿½o.setImortalidade(p, true);
 
 						WarpsAPI.Ir(p, "VoidChallenge");
 						API.setWarp(p, "VoidChallenge");

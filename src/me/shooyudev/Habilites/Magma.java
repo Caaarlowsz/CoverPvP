@@ -7,13 +7,13 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.KitAPI;
 
 public class Magma implements org.bukkit.event.Listener {
-	public static Main plugin;
+	public static CoverPvP plugin;
 
-	public Magma(Main main) {
+	public Magma(CoverPvP main) {
 		plugin = main;
 	}
 

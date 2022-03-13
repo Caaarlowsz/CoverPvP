@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemSpawnEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 
 public class DropEvents implements Listener {
 
@@ -17,7 +17,7 @@ public class DropEvents implements Listener {
 		if (e.getEntity().getItemStack().getType() == Material.STONE_SWORD
 				&& e.getEntity().getItemStack().getType() == Material.DIAMOND_SWORD
 				&& e.getEntity().getItemStack().getType() == Material.IRON_CHESTPLATE) {
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.plugin, new Runnable() {
 				@Override
 				public void run() {
 					e.getEntity().remove();
@@ -25,7 +25,7 @@ public class DropEvents implements Listener {
 				}
 			}, 1L);
 		}
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.plugin, new Runnable() {
 			@Override
 			public void run() {
 				e.getEntity().remove();

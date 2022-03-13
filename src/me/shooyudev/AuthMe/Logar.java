@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.Configs.AuthConfig;
 import me.shooyudev.Utills.Strings;
@@ -19,7 +19,7 @@ public class Logar implements CommandExecutor {
 				if (arg3[0].equalsIgnoreCase((String) AuthConfig.getConfig().config()
 						.get("Login." + p.getName().toLowerCase() + ".senha"))) {
 					p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você foi logado !");
-					Main.login.remove(p.getName());
+					CoverPvP.login.remove(p.getName());
 					for (int i = 1; i < 100; i++) {
 						p.sendMessage(" ");
 					}

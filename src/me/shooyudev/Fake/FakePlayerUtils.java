@@ -12,7 +12,7 @@ import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 import ca.wacos.nametagedit.NametagAPI;
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Manager.Manager;
 import net.minecraft.server.v1_7_R4.EntityPlayer;
 import net.minecraft.server.v1_7_R4.MathHelper;
@@ -31,7 +31,7 @@ public class FakePlayerUtils {
 	}
 
 	public static void changePlayerName(Player player, String name, boolean respawn) {
-		Player[] players = Main.getPlugin(Main.class).getServer().getOnlinePlayers();
+		Player[] players = CoverPvP.getPlugin(CoverPvP.class).getServer().getOnlinePlayers();
 		EntityPlayer entityPlayer = ((CraftPlayer) player).getHandle();
 		GameProfile playerProfile = entityPlayer.getProfile();
 		if (respawn) {
@@ -50,10 +50,10 @@ public class FakePlayerUtils {
 		if (respawn) {
 			respawnPlayer(player, players);
 		}
-		NametagAPI.setPrefix(player.getName(), "§7");
+		NametagAPI.setPrefix(player.getName(), "ï¿½7");
 		NametagAPI.setSuffix(player.getName(),
-				" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-		player.setDisplayName("§7" + player.getName());
+				" ï¿½7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+		player.setDisplayName("ï¿½7" + player.getName());
 	}
 
 	public static void removePlayerSkin(Player player) {
@@ -65,7 +65,7 @@ public class FakePlayerUtils {
 		GameProfile playerProfile = entityPlayer.getProfile();
 		playerProfile.getProperties().clear();
 		if (respawn) {
-			respawnPlayer(player, Main.getPlugin(Main.class).getServer().getOnlinePlayers());
+			respawnPlayer(player, CoverPvP.getPlugin(CoverPvP.class).getServer().getOnlinePlayers());
 		}
 	}
 
@@ -84,7 +84,7 @@ public class FakePlayerUtils {
 
 		}
 		if (respawn) {
-			respawnPlayer(player, Main.getPlugin(Main.class).getServer().getOnlinePlayers());
+			respawnPlayer(player, CoverPvP.getPlugin(CoverPvP.class).getServer().getOnlinePlayers());
 		}
 	}
 
@@ -96,10 +96,10 @@ public class FakePlayerUtils {
 			if (online.canSee(player)) {
 				((CraftPlayer) online).getHandle().playerConnection.sendPacket(addPlayerInfo);
 				((CraftPlayer) online).getHandle().playerConnection.sendPacket(updatePlayerInfo);
-				NametagAPI.setPrefix(player.getName(), "§7");
+				NametagAPI.setPrefix(player.getName(), "ï¿½7");
 				NametagAPI.setSuffix(player.getName(),
-						" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-				player.setDisplayName("§7" + player.getName());
+						" ï¿½7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+				player.setDisplayName("ï¿½7" + player.getName());
 			}
 		}
 	}
@@ -134,10 +134,10 @@ public class FakePlayerUtils {
 					((CraftPlayer) online).getHandle().playerConnection.sendPacket(spawn);
 					((CraftPlayer) online).getHandle().playerConnection.sendPacket(metadata);
 					((CraftPlayer) online).getHandle().playerConnection.sendPacket(headRotation);
-					NametagAPI.setPrefix(player.getName(), "§7");
+					NametagAPI.setPrefix(player.getName(), "ï¿½7");
 					NametagAPI.setSuffix(player.getName(),
-							" §7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
-					player.setDisplayName("§7" + player.getName());
+							" ï¿½7" + ChatColor.GRAY + "[" + Manager.prefix(player) + ChatColor.GRAY + "]");
+					player.setDisplayName("ï¿½7" + player.getName());
 				}
 			}
 		}

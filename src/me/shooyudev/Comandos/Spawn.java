@@ -9,11 +9,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.WarpsAPI;
-import me.shooyudev.Events.Proteção;
+ï¿½ï¿½o;
 import me.shooyudev.Utills.Strings;
 import me.shooyudev.scoreboarding.Updater;
 
@@ -25,13 +25,13 @@ public class Spawn implements CommandExecutor {
 		Player p = (Player) Sender;
 		if (Cmd.getName().equalsIgnoreCase("spawn")) {
 
-			p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está sendo " + ChatColor.YELLOW
+			p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ sendo " + ChatColor.YELLOW
 					+ ChatColor.BOLD + "TELEPORTADO" + ChatColor.GRAY + " para o Spawn!");
 			p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 9999, 9999));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 9999, 9999));
 			p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, 99999, 99999));
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 				public void run() {
 					for (Player players : Bukkit.getOnlinePlayers()) {
 						Updater.UpdateScore(players);
@@ -40,11 +40,11 @@ public class Spawn implements CommandExecutor {
 					API.tirarArmadura(p);
 
 					p.getInventory().clear();
-					Proteção.setImortalidade(p, true);
+					Proteï¿½ï¿½o.setImortalidade(p, true);
 					WarpsAPI.Ir(p, "Spawn");
 					API.setWarp(p, "Spawn");
 					WarpsAPI.removerFPS();
-					p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você foi " + ChatColor.YELLOW
+					p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ foi " + ChatColor.YELLOW
 							+ ChatColor.BOLD + "TELEPORTADO" + ChatColor.GRAY + " com sucesso!");
 					API.itensSpawn(p);
 					KitAPI.TirarKit(p);

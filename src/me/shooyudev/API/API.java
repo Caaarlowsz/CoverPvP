@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffectType;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Utills.Strings;
 
 public class API {
@@ -23,11 +23,11 @@ public class API {
 	public static String mensagem5;
 
 	static {
-		mensagem1 = Main.getInstance().getConfig().getString("Mensagem1").replace("&", "§");
-		mensagem2 = Main.getInstance().getConfig().getString("Mensagem2").replace("&", "§");
-		mensagem3 = Main.getInstance().getConfig().getString("Mensagem3").replace("&", "§");
-		mensagem4 = Main.getInstance().getConfig().getString("Mensagem4").replace("&", "§");
-		mensagem5 = Main.getInstance().getConfig().getString("Mensagem5").replace("&", "§");
+		mensagem1 = CoverPvP.getInstance().getConfig().getString("Mensagem1").replace("&", "ï¿½");
+		mensagem2 = CoverPvP.getInstance().getConfig().getString("Mensagem2").replace("&", "ï¿½");
+		mensagem3 = CoverPvP.getInstance().getConfig().getString("Mensagem3").replace("&", "ï¿½");
+		mensagem4 = CoverPvP.getInstance().getConfig().getString("Mensagem4").replace("&", "ï¿½");
+		mensagem5 = CoverPvP.getInstance().getConfig().getString("Mensagem5").replace("&", "ï¿½");
 	}
 
 	private static HashMap<Player, String> Warp = new HashMap<>();

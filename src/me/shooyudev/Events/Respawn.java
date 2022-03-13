@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.API;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.API.WarpsAPI;
@@ -26,7 +26,7 @@ public class Respawn implements Listener {
 		p.getInventory().setArmorContents(null);
 		Evento.participantes.remove(p.getName());
 
-		Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+		Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 			public void run() {
 				p.spigot().respawn();
 			}

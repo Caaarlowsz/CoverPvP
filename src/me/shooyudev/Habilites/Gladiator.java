@@ -25,7 +25,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.CooldownAPI;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.Utills.Strings;
@@ -126,7 +126,7 @@ public class Gladiator implements Listener {
 					noExecut.add(r);
 					fighting.put(p.getName(), r.getName());
 					fighting.put(r.getName(), p.getName());
-					this.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+					this.id2 = Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 						public void run() {
 							if ((Gladiator.fighting.containsKey(p.getName()))
 									&& (((String) Gladiator.fighting.get(p.getName())).equalsIgnoreCase(r.getName()))
@@ -135,7 +135,7 @@ public class Gladiator implements Listener {
 							}
 						}
 					}, 2400L);
-					this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+					this.id1 = Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 						public void run() {
 							if ((Gladiator.fighting.containsKey(p.getName()))
 									&& (((String) Gladiator.fighting.get(p.getName())).equalsIgnoreCase(r.getName()))
@@ -194,7 +194,7 @@ public class Gladiator implements Listener {
 				&& (fighting.containsKey(e.getPlayer().getName()))) {
 			e.setCancelled(true);
 			e.getClickedBlock().setType(Material.GLASS);
-			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 				public void run() {
 					if (Gladiator.fighting.containsKey(e.getPlayer().getName())) {
 						e.getClickedBlock().setType(Material.GLASS);

@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.CooldownAPI;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.Utills.Strings;
@@ -30,7 +30,7 @@ public class Ajnin implements Listener {
 			if (KitAPI.getKit(hitou) == "Ajnin" && !a.containsKey(hitou)) {
 				a.put(hitou, hitado);
 
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
 						a.remove(hitou);
 						a.remove(hitado);
@@ -56,11 +56,11 @@ public class Ajnin implements Listener {
 
 			if ((hitado != null)) {
 				if (noExecut.contains(hitado)) {
-					hitou.sendMessage("§cEste jogador está em um pvp nas alturas!");
+					hitou.sendMessage("ï¿½cEste jogador estï¿½ em um pvp nas alturas!");
 					return;
 				}
 				if (noExecut.contains(hitou)) {
-					hitou.sendMessage("§cVocê não pode utilizar o kit Ajnin durante um pvp no Gladiator!");
+					hitou.sendMessage("ï¿½cVocï¿½ nï¿½o pode utilizar o kit Ajnin durante um pvp no Gladiator!");
 					return;
 				}
 				if (hitou.getLocation().distance(hitado.getLocation()) < 40.0D) {

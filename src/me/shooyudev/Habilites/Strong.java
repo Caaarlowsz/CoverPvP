@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.CooldownAPI;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.Utills.Strings;
@@ -43,29 +43,29 @@ public class Strong implements Listener {
 				p.getInventory().setArmorContents(null);
 				ItemStack Peito = new ItemStack(Material.IRON_CHESTPLATE);
 
-				ItemStack Calça = new ItemStack(Material.IRON_LEGGINGS);
+				ItemStack Calï¿½a = new ItemStack(Material.IRON_LEGGINGS);
 
 				ItemStack Bota = new ItemStack(Material.IRON_BOOTS);
 
 				ItemStack Capacete = new ItemStack(Material.IRON_HELMET);
 
 				p.getInventory().setChestplate(Peito);
-				p.getInventory().setLeggings(Calça);
+				p.getInventory().setLeggings(Calï¿½a);
 				p.getInventory().setHelmet(Capacete);
 				p.getInventory().setBoots(Bota);
 				p.updateInventory();
 				CooldownAPI.addCooldown(p, 40);
 
-				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Você está " + ChatColor.YELLOW
+				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Vocï¿½ estï¿½ " + ChatColor.YELLOW
 						+ ChatColor.BOLD + "Fulliron" + ChatColor.GRAY + " por 10 segundos.");
 				fulliron.add(p);
 
 				if (fulliron.contains(p)) {
-					Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+					Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 						public void run() {
 
 							if (fulliron.contains(p)) {
-								p.sendMessage("§aA Sua armadura foi retirada!");
+								p.sendMessage("ï¿½aA Sua armadura foi retirada!");
 								p.getInventory().setArmorContents(null);
 
 								p.closeInventory();

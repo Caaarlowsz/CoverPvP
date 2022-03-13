@@ -15,12 +15,12 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 
 public class Diamante implements Listener {
-	public static Main plugin;
+	public static CoverPvP plugin;
 
-	public Diamante(Main main) {
+	public Diamante(CoverPvP main) {
 		plugin = main;
 	}
 

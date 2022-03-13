@@ -9,8 +9,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.shooyudev.Main;
-import me.shooyudev.Events.Proteção;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
+ï¿½ï¿½o;
 import me.shooyudev.Utills.Strings;
 
 public class Evento implements CommandExecutor {
@@ -29,16 +29,16 @@ public class Evento implements CommandExecutor {
 			if (cmd.getName().equalsIgnoreCase("evento")) {
 				if (evento == false) {
 					p.sendMessage(
-							Strings.servidormensagem + ChatColor.GRAY + "O Evento esta fechado ou não esta ocorrendo.");
+							Strings.servidormensagem + ChatColor.GRAY + "O Evento esta fechado ou nï¿½o esta ocorrendo.");
 					return true;
 				}
 				if (participantes.contains(p.getName())) {
-					p.sendMessage("§7Você ja esta no evento.");
+					p.sendMessage("ï¿½7Vocï¿½ ja esta no evento.");
 					return true;
 				}
 				if (evento == true) {
-					Proteção.setImortalidade(p, true);
-					p.sendMessage("§7Você entrou no evento.");
+					Proteï¿½ï¿½o.setImortalidade(p, true);
+					p.sendMessage("ï¿½7Vocï¿½ entrou no evento.");
 					Evento.participantes.add(p.getName());
 					return true;
 				}
@@ -49,117 +49,117 @@ public class Evento implements CommandExecutor {
 			Bukkit.broadcastMessage("     " + Strings.servidor);
 			Bukkit.broadcastMessage(" ");
 			Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-			Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+			Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 			Bukkit.broadcastMessage(
-					" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+					" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 			Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "3 minutos.");
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "2 minutos.");
 
 				}
 			}, 60 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "1 minutos.");
 
 				}
 			}, 120 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "30 segundos.");
 
 				}
 			}, 150 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "20 segundos.");
 
 				}
 			}, 160 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "10 segundos.");
 
 				}
 			}, 170 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
 					Bukkit.broadcastMessage("     " + Strings.servidor);
 					Bukkit.broadcastMessage(" ");
 					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Evento aberto.");
-					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dê /evento");
+					Bukkit.broadcastMessage(" " + ChatColor.YELLOW + "Quer participar? Dï¿½ /evento");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 					Bukkit.broadcastMessage(
-							" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
+							" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
 					Bukkit.broadcastMessage(
 							" " + ChatColor.YELLOW + "Iniciando em: " + ChatColor.GREEN + "5 segundos.");
 
 				}
 			}, 175 * 20L);
 
-			Bukkit.getScheduler().scheduleSyncDelayedTask(Main.instance, new Runnable() {
+			Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.instance, new Runnable() {
 
 				@Override
 				public void run() {
@@ -171,13 +171,13 @@ public class Evento implements CommandExecutor {
 						Bukkit.broadcastMessage(
 								" " + ChatColor.YELLOW + "Participantes: " + ChatColor.GREEN + participantes.size());
 						Bukkit.broadcastMessage(
-								" " + ChatColor.YELLOW + "Prêmio: " + ChatColor.GREEN + "Receberá no final do evento.");
-						Proteção.setImortalidade(p, false);
+								" " + ChatColor.YELLOW + "Prï¿½mio: " + ChatColor.GREEN + "Receberï¿½ no final do evento.");
+						Proteï¿½ï¿½o.setImortalidade(p, false);
 						evento = false;
 						comecou = true;
 					} else {
-						Bukkit.broadcastMessage("§cEvento fechado.");
-						Bukkit.broadcastMessage("§cMotivo: §eFalta de jogadores.");
+						Bukkit.broadcastMessage("ï¿½cEvento fechado.");
+						Bukkit.broadcastMessage("ï¿½cMotivo: ï¿½eFalta de jogadores.");
 						evento = false;
 						comecou = false;
 					}

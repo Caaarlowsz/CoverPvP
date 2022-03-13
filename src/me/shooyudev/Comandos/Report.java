@@ -13,16 +13,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.KitAPI;
 import me.shooyudev.Utills.Strings;
 
 public class Report implements CommandExecutor {
 
 	public ArrayList<String> reported;
-	private Main plugin;
+	private CoverPvP plugin;
 
-	public Report(final Main plugin) {
+	public Report(final CoverPvP plugin) {
 		this.reported = new ArrayList<String>();
 		this.plugin = plugin;
 	}
@@ -32,7 +32,7 @@ public class Report implements CommandExecutor {
 			final String[] args) {
 		final Player p = (Player) sender;
 		if (!(sender instanceof Player)) {
-			sender.sendMessage("§cVoce nao pode usar isso no console");
+			sender.sendMessage("ï¿½cVoce nao pode usar isso no console");
 			return false;
 		}
 		if (commandLabel.equalsIgnoreCase("report")) {
@@ -40,30 +40,30 @@ public class Report implements CommandExecutor {
 				final Player target = p.getServer().getPlayer(args[0]);
 				if (target != null) {
 					if (this.reported.contains(p.getName())) {
-						p.sendMessage("§7Voce ja efetuou um report, por favor aguarde!");
+						p.sendMessage("ï¿½7Voce ja efetuou um report, por favor aguarde!");
 						return true;
 					}
 					final String reportMsg = StringUtils.join((Object[]) Arrays.copyOfRange(args, 1, args.length), " ");
 					this.reported.add(p.getName());
-					p.sendMessage("§aSeu report sobre §6" + target.getName() + " foi enviado com sucesso. Pelo motivo"
+					p.sendMessage("ï¿½aSeu report sobre ï¿½6" + target.getName() + " foi enviado com sucesso. Pelo motivo"
 							+ reportMsg + " ");
 					Player[] arrayOfPlayer;
 					for (int j = (arrayOfPlayer = Bukkit.getOnlinePlayers()).length, i = 0; i < j; ++i) {
 						final Player s = arrayOfPlayer[i];
 						if (s.hasPermission("cover.report")) {
 							s.playSound(s.getLocation(), Sound.LEVEL_UP, 15.0f, 1.0f);
-							s.sendMessage("§c");
-							s.sendMessage("§c§m--->-----------------------------<---");
-							s.sendMessage("§c");
-							s.sendMessage("§c             §e§lNOVO REPORT!§e              ");
-							s.sendMessage("§c");
-							s.sendMessage("   §eAcusado: §c" + target.getName());
-							s.sendMessage("    §eReport de: §a" + p.getName());
-							s.sendMessage("     §eMotivo: §e" + reportMsg);
-							s.sendMessage("      §eKit: §a" + KitAPI.getKit(target));
-							s.sendMessage("§c");
-							s.sendMessage("§c§m--->-----------------------------<---");
-							s.sendMessage("§c");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("ï¿½cï¿½m--->-----------------------------<---");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("ï¿½c             ï¿½eï¿½lNOVO REPORT!ï¿½e              ");
+							s.sendMessage("ï¿½c");
+							s.sendMessage("   ï¿½eAcusado: ï¿½c" + target.getName());
+							s.sendMessage("    ï¿½eReport de: ï¿½a" + p.getName());
+							s.sendMessage("     ï¿½eMotivo: ï¿½e" + reportMsg);
+							s.sendMessage("      ï¿½eKit: ï¿½a" + KitAPI.getKit(target));
+							s.sendMessage("ï¿½c");
+							s.sendMessage("ï¿½cï¿½m--->-----------------------------<---");
+							s.sendMessage("ï¿½c");
 							Bukkit.getServer().getScheduler().scheduleSyncDelayedTask((Plugin) this.plugin,
 									(Runnable) new Runnable() {
 										@Override
@@ -74,7 +74,7 @@ public class Report implements CommandExecutor {
 						}
 					}
 				} else {
-					p.sendMessage("§cEste jogador nao esta conectado!");
+					p.sendMessage("ï¿½cEste jogador nao esta conectado!");
 				}
 			} else {
 				p.sendMessage(Strings.servidormensagem + ChatColor.GRAY + "Use /report <nick> <motivo>");

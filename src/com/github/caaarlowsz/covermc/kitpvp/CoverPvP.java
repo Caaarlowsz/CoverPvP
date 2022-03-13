@@ -1,7 +1,9 @@
-package me.shooyudev;
+package com.github.caaarlowsz.covermc.kitpvp;
 
 import java.util.ArrayList;
 
+import com.github.caaarlowsz.kitpvpapi.KitPvP;
+import com.github.caaarlowsz.kitpvpapi.KitPvPAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
@@ -43,7 +45,7 @@ import me.shooyudev.Comandos.GroupVip;
 import me.shooyudev.Comandos.GroupYoutuber;
 import me.shooyudev.Comandos.Habilitar;
 import me.shooyudev.Comandos.Kit;
-import me.shooyudev.Comandos.Manutençao;
+import me.shooyudev.Comandos.ManutenÃ§ao;
 import me.shooyudev.Comandos.Ping;
 import me.shooyudev.Comandos.PvP;
 import me.shooyudev.Comandos.Rank;
@@ -70,7 +72,7 @@ import me.shooyudev.Events.DropEvents;
 import me.shooyudev.Events.Entrar;
 import me.shooyudev.Events.EventoAuthEvents;
 import me.shooyudev.Events.Principais;
-import me.shooyudev.Events.Proteção;
+import me.shooyudev.Events.ProteÃ§Ã£o;
 import me.shooyudev.Events.Respawn;
 import me.shooyudev.Events.Sair;
 import me.shooyudev.Habilites.Ajnin;
@@ -111,7 +113,24 @@ import me.shooyudev.menus.IntercanbioMenus;
 import me.shooyudev.menus.Menus;
 import me.shooyudev.scoreboarding.Updater;
 
-public class Main extends JavaPlugin {
+public class CoverPvP extends JavaPlugin implements KitPvP {
+	
+	@Override
+	public void onEnable() {
+		super.onEnable();
+		KitPvPAPI.setInstance(this);
+		
+		// TODO: Remover quando melhorar a classe principal
+		this.enable();
+	}
+	
+	@Override
+	public void onDisable() {
+		super.onDisable();
+		
+		// TODO: Remover quando melhorar a classe principal
+		this.disable();
+	}
 
 	public static ArrayList<String> login = new ArrayList<>();
 
@@ -120,9 +139,9 @@ public class Main extends JavaPlugin {
 	public static Updater up = new Updater();
 	public static BlinkEffect bk = new BlinkEffect();
 
-	public static Main instance;
+	public static CoverPvP instance;
 
-	public static Main getInstance() {
+	public static CoverPvP getInstance() {
 		return instance;
 	}
 
@@ -132,8 +151,7 @@ public class Main extends JavaPlugin {
 		return plugin;
 	}
 
-	@Override
-	public void onEnable() {
+	public void enable() {
 		instance = this;
 		plugin = this;
 		saveDefaultConfig();
@@ -149,8 +167,8 @@ public class Main extends JavaPlugin {
 			player.kickPlayer(ChatColor.DARK_RED + "" + ChatColor.BOLD + "REINCIANDO" + "\n" + "\n" + ChatColor.GRAY
 					+ "            Estamos reiniciando para melhorar sua jogabilidade" + "\n" + ChatColor.GRAY
 					+ "O Servidor se encontra em Beta " + "\n"
-					+ "Bugs? PorFavor nos informen pelo Twitter: §b§l@ArkuzMCOFICIAL" + "\n" + ChatColor.GRAY
-					+ "Mais informaçoes em nosso site: §nConstrução...");
+					+ "Bugs? PorFavor nos informen pelo Twitter: ï¿½bï¿½l@ArkuzMCOFICIAL" + "\n" + ChatColor.GRAY
+					+ "Mais informaï¿½oes em nosso site: ï¿½nConstruÃ§Ã£o...");
 		}
 		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 			public void run() {
@@ -166,8 +184,7 @@ public class Main extends JavaPlugin {
 		}
 	}
 
-	@Override
-	public void onDisable() {
+	public void disable() {
 		Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "O Servidor foi desligado corretamente !");
 	}
 
@@ -193,7 +210,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new Warp(), this);
 		Bukkit.getPluginManager().registerEvents(new DeathEvents(), this);
 		Bukkit.getPluginManager().registerEvents(new Respawn(), this);
-		Bukkit.getPluginManager().registerEvents(new Proteção(), this);
+		Bukkit.getPluginManager().registerEvents(new ProteÃ§Ã£o(), this);
 		Bukkit.getPluginManager().registerEvents(new Principais(), this);
 		Bukkit.getPluginManager().registerEvents(new Chat(), this);
 		Bukkit.getPluginManager().registerEvents(new Sopas(), this);
@@ -207,7 +224,7 @@ public class Main extends JavaPlugin {
 		Bukkit.getPluginManager().registerEvents(new Esmeralda(this), this);
 		Bukkit.getPluginManager().registerEvents(new Ferro(this), this);
 		Bukkit.getPluginManager().registerEvents(new Redstone(this), this);
-		Bukkit.getPluginManager().registerEvents(new Manutençao(), this);
+		Bukkit.getPluginManager().registerEvents(new ManutenÃ§ao(), this);
 	}
 
 	void EventosKits() {
@@ -264,7 +281,7 @@ public class Main extends JavaPlugin {
 		getCommand("admin").setExecutor(new Admin());
 		getCommand("setrank").setExecutor(new SetRank());
 		getCommand("rank").setExecutor(new Rank());
-		getCommand("manutencao").setExecutor(new Manutençao());
+		getCommand("manutencao").setExecutor(new ManutenÃ§ao());
 		getCommand("groupset").setExecutor(new GroupSet());
 		getCommand("chat").setExecutor(new Chat());
 		getCommand("broadcast").setExecutor(new Bc());

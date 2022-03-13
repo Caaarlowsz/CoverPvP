@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Manager.Manager;
 import me.shooyudev.Utills.Strings;
 
@@ -17,10 +17,10 @@ public class Aplicar extends Manager {
 	public static String detector;
 
 	static {
-		builder = Main.getInstance().getConfig().getString("Builder").replace("&", "§");
-		helper = Main.getInstance().getConfig().getString("Helper").replace("&", "§");
-		trial = Main.getInstance().getConfig().getString("Trial").replace("&", "§");
-		detector = Main.getInstance().getConfig().getString("GcDetector").replace("&", "§");
+		builder = CoverPvP.getInstance().getConfig().getString("Builder").replace("&", "ï¿½");
+		helper = CoverPvP.getInstance().getConfig().getString("Helper").replace("&", "ï¿½");
+		trial = CoverPvP.getInstance().getConfig().getString("Trial").replace("&", "ï¿½");
+		detector = CoverPvP.getInstance().getConfig().getString("GcDetector").replace("&", "ï¿½");
 	}
 
 	@Override

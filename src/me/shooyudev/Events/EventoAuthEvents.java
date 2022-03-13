@@ -16,14 +16,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 
 public class EventoAuthEvents implements Listener {
 
 	@EventHandler
 	public void Mover(PlayerMoveEvent e) {
 		Player p = e.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			p.teleport(p);
 		}
 	}
@@ -31,7 +31,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onPickUp(PlayerPickupItemEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -39,7 +39,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onDrop(PlayerDropItemEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -48,7 +48,7 @@ public class EventoAuthEvents implements Listener {
 	public void onClickInventorySpec(InventoryClickEvent event) {
 
 		Player p = (Player) event.getWhoClicked();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 			p.updateInventory();
 		}
@@ -57,7 +57,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onOpenInventorySpec(InventoryOpenEvent event) {
 		Player p = (Player) event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -65,7 +65,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onBlockBreak(BlockBreakEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -73,7 +73,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onBlockPlace(BlockPlaceEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -81,7 +81,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onChat(PlayerChatEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -90,13 +90,13 @@ public class EventoAuthEvents implements Listener {
 	public void onDamage(EntityDamageByEntityEvent event) {
 		if ((event.getEntity() instanceof Player)) {
 			Player p = (Player) event.getEntity();
-			if (Main.login.contains(p.getName())) {
+			if (CoverPvP.login.contains(p.getName())) {
 				event.setCancelled(true);
 			}
 		}
 		if ((event.getDamager() instanceof Player)) {
 			Player p = (Player) event.getDamager();
-			if (Main.login.contains(p.getName())) {
+			if (CoverPvP.login.contains(p.getName())) {
 				event.setCancelled(true);
 			}
 		}
@@ -105,7 +105,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void onInteract(PlayerInteractEvent event) {
 		Player p = event.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			event.setCancelled(true);
 		}
 	}
@@ -113,7 +113,7 @@ public class EventoAuthEvents implements Listener {
 	@EventHandler
 	public void Mover(AsyncPlayerChatEvent e) {
 		Player p = e.getPlayer();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			e.setCancelled(true);
 		} else {
 			e.setCancelled(false);
@@ -124,7 +124,7 @@ public class EventoAuthEvents implements Listener {
 	public void aoCMD(PlayerCommandPreprocessEvent e) {
 		Player p = e.getPlayer();
 		String cmd = e.getMessage();
-		if (Main.login.contains(p.getName())) {
+		if (CoverPvP.login.contains(p.getName())) {
 			if ((cmd.startsWith("/login")) || (cmd.startsWith("/register"))) {
 				e.setCancelled(false);
 			} else {

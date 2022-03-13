@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.CooldownAPI;
 import me.shooyudev.API.KitAPI;
 
@@ -44,11 +44,11 @@ public class Phantom implements Listener {
 				kPeito.setColor(Color.WHITE);
 				Peito.setItemMeta(kPeito);
 
-				ItemStack Calça = new ItemStack(Material.LEATHER_LEGGINGS);
-				LeatherArmorMeta kCaça = (LeatherArmorMeta) Calça.getItemMeta();
-				kCaça.setDisplayName("");
-				kCaça.setColor(Color.WHITE);
-				Calça.setItemMeta(kCaça);
+				ItemStack Calï¿½a = new ItemStack(Material.LEATHER_LEGGINGS);
+				LeatherArmorMeta kCaï¿½a = (LeatherArmorMeta) Calï¿½a.getItemMeta();
+				kCaï¿½a.setDisplayName("");
+				kCaï¿½a.setColor(Color.WHITE);
+				Calï¿½a.setItemMeta(kCaï¿½a);
 
 				ItemStack Bota = new ItemStack(Material.LEATHER_BOOTS);
 				LeatherArmorMeta kBota = (LeatherArmorMeta) Bota.getItemMeta();
@@ -63,18 +63,18 @@ public class Phantom implements Listener {
 				Capacete.setItemMeta(kCasapete);
 
 				p.getInventory().setChestplate(Peito);
-				p.getInventory().setLeggings(Calça);
+				p.getInventory().setLeggings(Calï¿½a);
 				p.getInventory().setHelmet(Capacete);
 				p.getInventory().setBoots(Bota);
 				p.updateInventory();
 
-				p.sendMessage("§aVocê pode voar por 5 segundos!");
+				p.sendMessage("ï¿½aVocï¿½ pode voar por 5 segundos!");
 				CooldownAPI.addCooldown(p, 35);
 
 				p.setAllowFlight(true);
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.getPlugin(), new Runnable() {
 					public void run() {
-						p.sendMessage("§cO seu modo pássaro acabou!");
+						p.sendMessage("ï¿½cO seu modo pï¿½ssaro acabou!");
 						p.getInventory().setArmorContents(null);
 
 						p.closeInventory();

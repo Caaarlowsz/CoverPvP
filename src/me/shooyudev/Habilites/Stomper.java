@@ -14,7 +14,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.util.Vector;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.API.KitAPI;
 
 public class Stomper implements Listener {
@@ -27,19 +27,19 @@ public class Stomper implements Listener {
 		if ((KitAPI.getKit(p) == "Stomper")) {
 			if ((p.getItemInHand().getType() == Material.EMERALD) && (e.getAction() == Action.RIGHT_CLICK_AIR)) {
 				if (delay.contains(p.getName())) {
-					p.sendMessage("§cVocê esta em cooldown.");
+					p.sendMessage("ï¿½cVocï¿½ esta em cooldown.");
 					return;
 				}
 				p.setVelocity(new Vector(0, 3, 0).setY(3));
 				delay.add(p.getName());
-				Bukkit.getScheduler().scheduleSyncDelayedTask(Main.plugin, new Runnable() {
+				Bukkit.getScheduler().scheduleSyncDelayedTask(CoverPvP.plugin, new Runnable() {
 
 					@Override
 					public void run() {
 						if (delay.contains(p.getName())) {
 							delay.remove(p.getName());
 							if (KitAPI.getKit(p) == "Stomper") {
-								p.sendMessage("§bVocê saiu do cooldown. Pode usar o kit novamente.");
+								p.sendMessage("ï¿½bVocï¿½ saiu do cooldown. Pode usar o kit novamente.");
 							}
 						}
 					}
@@ -67,7 +67,7 @@ public class Stomper implements Listener {
 						}
 						if (stompado.isSneaking()) {
 							stompado.damage(6.0D, p);
-							stompado.sendMessage("§cVoce foi stompado por: " + p.getDisplayName());
+							stompado.sendMessage("ï¿½cVoce foi stompado por: " + p.getDisplayName());
 						} else {
 							stompado.damage(e.getDamage(), p);
 						}

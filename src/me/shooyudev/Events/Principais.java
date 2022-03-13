@@ -23,7 +23,7 @@ import org.bukkit.event.server.ServerListPingEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 import org.bukkit.help.HelpTopic;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Manager.Manager;
 import me.shooyudev.Utills.FpsEnum;
 import me.shooyudev.Utills.Strings;
@@ -47,8 +47,8 @@ public class Principais implements Listener {
 	public static String motd2;
 
 	static {
-		motd = Main.getInstance().getConfig().getString("Motd").replace("&", "§");
-		motd2 = Main.getInstance().getConfig().getString("Motd2").replace("&", "§");
+		motd = CoverPvP.getInstance().getConfig().getString("Motd").replace("&", "§");
+		motd2 = CoverPvP.getInstance().getConfig().getString("Motd2").replace("&", "§");
 	}
 
 	@EventHandler
@@ -68,7 +68,7 @@ public class Principais implements Listener {
 
 	@EventHandler
 	public void Bread(PlayerMoveEvent e) {
-		if (Main.estado == FpsEnum.FPS1
+		if (CoverPvP.estado == FpsEnum.FPS1
 				&& e.getTo().getBlock().getRelative(BlockFace.DOWN).getType().equals(Material.GLASS)) {
 			Proteção.setImortalidade(e.getPlayer(), false);
 		}

@@ -11,7 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import me.shooyudev.Main;
+import com.github.caaarlowsz.covermc.kitpvp.CoverPvP;
 import me.shooyudev.Configs.AuthConfig;
 import me.shooyudev.Utills.Strings;
 
@@ -35,11 +35,11 @@ public class Login implements Listener {
 	@EventHandler
 	public void aoLogin(PlayerJoinEvent e) {
 		final Player p = e.getPlayer();
-		Main.login.add(p.getName());
+		CoverPvP.login.add(p.getName());
 		if (AuthConfig.getConfig().config().contains("Login." + p.getName().toLowerCase() + ".senha")) {
-			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(CoverPvP.plugin, new Runnable() {
 				public void run() {
-					if (Main.login.contains(p.getName())) {
+					if (CoverPvP.login.contains(p.getName())) {
 						for (int i = 1; i < 100; i++) {
 							p.sendMessage(" ");
 						}
@@ -50,9 +50,9 @@ public class Login implements Listener {
 			}, 0L, 100L);
 		}
 		if (!AuthConfig.getConfig().config().contains("Login." + p.getName().toLowerCase() + ".senha")) {
-			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(Main.plugin, new Runnable() {
+			Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(CoverPvP.plugin, new Runnable() {
 				public void run() {
-					if (Main.login.contains(p.getName())) {
+					if (CoverPvP.login.contains(p.getName())) {
 						for (int i = 1; i < 100; i++) {
 							p.sendMessage(" ");
 						}
