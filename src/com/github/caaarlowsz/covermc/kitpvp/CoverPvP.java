@@ -127,6 +127,7 @@ public class CoverPvP extends JavaPlugin implements KitPvP {
 	@Override
 	public void onDisable() {
 		super.onDisable();
+		KitPvPAPI.setInstance(null);
 		
 		// TODO: Remover quando melhorar a classe principal
 		this.disable();
